@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Room</title>
+</head>
+<body>
+<h1>Register Room</h1>
+<form id="customerForm">
+  <label for="roomType">Room Type:</label>
+  <input type="text" id="roomType" name="roomType" required>
+  <br>
+  <label for="checkInDate">Check-In Date:</label>
+  <input type="date" id="checkInDate" name="checkInDate" required>
+  <br>
+  <label for="checkOutDate">Check-Out Date:</label>
+  <input type="date" id="checkOutDate" name="checkOutDate" required>
+  <br>
+  <label for="customerName">Customer Name:</label>
+  <input type="text" id="customerName" name="customerName" required>
+  <br>
+  <label for="customerEmail">Customer Email:</label>
+  <input type="email" id="customerEmail" name="customerEmail" required>
+  <br>
+  <label for="customerPhone">Customer Phone:</label>
+  <input type="tel" id="customerPhone" name="customerPhone" required>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+<script>
+  document.getElementById("customerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let roomType = document.getElementById("roomType").value;
+    let checkInDate = document.getElementById("checkInDate").value;
+    let checkOutDate = document.getElementById("checkOutDate").value;
+    let customerName = document.getElementById("customerName").value;
+    let customerEmail = document.getElementById("customerEmail").value;
+    let customerPhone = document.getElementById("customerPhone").value;
+
+    let customerInfo = {
+      "customerName": customerName,
+      "customerEmail": customerEmail,
+      "customerPhone": customerPhone
+    };
+
+
+    let customerService = new CustomerService();
+    customerService.registerRoom(roomType, checkInDate, checkOutDate, customerInfo);
+  });
+</script>
+</body>
+</html>

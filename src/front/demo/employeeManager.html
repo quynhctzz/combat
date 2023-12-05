@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <title>Add Staff</title>
+</head>
+<body>
+<h1>Human resource management in CTT Hotel Company</h1>
+<form action="#" th:action="@{/Staff}" th:method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required="required">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required="required">
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+
+</body>
+</html>
